@@ -6,6 +6,8 @@ export interface Webhook {
     url?: string | undefined;
     /** Events this webhook subscribes to */
     events?: Webhook.Events.Item[] | undefined;
+    /** HMAC-SHA256 signing secret for verifying webhook payloads. Prefixed with `whsec_`. Store this securely — it is only returned when creating or listing webhooks. */
+    signing_secret?: string | undefined;
     active?: boolean | undefined;
     created_at?: string | undefined;
 }
